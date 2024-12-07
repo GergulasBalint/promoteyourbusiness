@@ -18,62 +18,62 @@ const services = [
   {
     title: "SEO Services",
     description: "Improve your local search rankings and get found by more customers in your area.",
-    icon: Search
+    icon: <Search className="w-6 h-6 text-blue-600" />
   },
   {
     title: "PPC Advertising",
     description: "Target local customers actively searching for your services with paid advertising.",
-    icon: MousePointerClick
+    icon: <MousePointerClick className="w-6 h-6 text-blue-600" />
   },
   {
     title: "Google Business Profile",
     description: "Optimize your Google presence and stand out in local search results.",
-    icon: MapPin
+    icon: <MapPin className="w-6 h-6 text-blue-600" />
   },
   {
     title: "Social Media Marketing",
     description: "Build community engagement and brand awareness on social platforms.",
-    icon: Share2
+    icon: <Share2 className="w-6 h-6 text-blue-600" />
   },
   {
     title: "Email Marketing",
     description: "Stay connected with customers through targeted email campaigns.",
-    icon: Mail
+    icon: <Mail className="w-6 h-6 text-blue-600" />
   },
   {
     title: "Content Marketing",
     description: "Create valuable content that attracts and engages your local audience.",
-    icon: FileText
+    icon: <FileText className="w-6 h-6 text-blue-600" />
   },
   {
     title: "Website Design",
     description: "Create a stunning, mobile-friendly website that converts visitors into customers.",
-    icon: Laptop
+    icon: <Laptop className="w-6 h-6 text-blue-600" />
   },
   {
     title: "Reputation Management",
     description: "Monitor and improve your online reputation through reviews and feedback.",
-    icon: Star
+    icon: <Star className="w-6 h-6 text-blue-600" />
   },
   {
     title: "Video Marketing",
     description: "Engage your audience with professional video content and advertising.",
-    icon: Video
+    icon: <Video className="w-6 h-6 text-blue-600" />
   },
   {
     title: "Analytics & Automation",
     description: "Track performance and automate marketing tasks for better efficiency.",
-    icon: BarChart2
+    icon: <BarChart2 className="w-6 h-6 text-blue-600" />
   },
   {
     title: "Influencer Marketing",
     description: "Partner with local influencers to expand your reach and credibility.",
-    icon: Users
+    icon: <Users className="w-6 h-6 text-blue-600" />
   },
   {
     title: "Directory Management",
     description: "Maintain consistent business information across all online directories.",
-    icon: FolderTree
+    icon: <FolderTree className="w-6 h-6 text-blue-600" />
   }
 ]
 
@@ -92,25 +92,30 @@ export default function ServicesGrid() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card 
+            <div 
               key={index}
-              className="transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 
+                transform hover:-translate-y-1 overflow-hidden border border-gray-100"
             >
-              <CardHeader>
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <service.icon className="w-6 h-6 text-blue-600" />
+              <div className="p-8">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                  {service.icon}
                 </div>
-                <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
-                <CardDescription className="text-gray-600">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 mb-6">
                   {service.description}
-                </CardDescription>
-              </CardHeader>
-              <CardFooter>
-                <button className="text-blue-600 font-medium hover:text-blue-700 transition-colors">
-                  Learn More →
+                </p>
+                <button className="text-blue-600 font-medium hover:text-blue-700 transition-colors 
+                  flex items-center group">
+                  Learn More 
+                  <span className="ml-2 transform group-hover:translate-x-1 transition-transform">
+                    →
+                  </span>
                 </button>
-              </CardFooter>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
       </div>
